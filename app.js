@@ -1,4 +1,5 @@
 
+const imageModal = document.getElementById("imageModal")
 const input = document.getElementById('ingresar-tarea')
 const boton = document.querySelector('button')
 const listaDeTarea = document.getElementById('lista-de-tareas')
@@ -10,9 +11,12 @@ function agregarTarea(){
         tareaNueva.classList.add('tarea')
 
         //Texto ingresado por el usuario
-        let texto = document.createElement('p')
-        texto.innerText = input.value
-        tareaNueva.appendChild(texto)
+        let image = document.createElement("img")
+        image.src = "./imagenes/" + input.value + ".jpg"
+        image.onclick = function() {
+            displayTask(image)
+        }
+        tareaNueva.appendChild(image)
 
         //Crear y agregar contenedor de iconos
         let iconos = document.createElement('div')
@@ -53,3 +57,14 @@ function eliminarTarea(e){
 }
 
 boton.addEventListener('click', agregarTarea)
+
+function displayTask(element) {
+    const img = imageModal.getElementsByTagName("img")[0]
+    img.src = element.src
+    imageModal.classList.add("show")
+    
+}
+
+function hideModal() {
+    imageModal.classList.remove("show")
+}

@@ -13,8 +13,11 @@ body{
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 40px 0;
-    background: url(imagenes/fondo.jpg) no-repeat center center/ cover;
+    padding: 40px ;
+    background: url(imagenes/17016.jpg) no-repeat center center/ cover;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 /*contenedor*/
@@ -125,4 +128,29 @@ i{
 .icono-completar:hover,
 .icono-eliminar:hover{
     background-color: rgba(255,255,255,0.523);
+}
+img{
+    width: 40%;
+}
+#imageModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100vw;
+    height: 100vh;
+    background-color: #0000007f;
+    z-index: 1;
+    display: none;
+}
+
+#imageModal > img {
+    height: 90vmin;
+}
+
+#imageModal.show {
+   display: flex;
 }
